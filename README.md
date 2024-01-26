@@ -4,6 +4,10 @@
 
 - CLI `pritul-client` must be configured
 
+## Why?
+
+- I don't want to lift my hand and use mouse to connect to VPN. Why should you?
+
 ## Screenshots
 
 <img width="783" alt="image" src="https://github.com/HandOfGod94/vpn-connection/assets/9387023/cdd34f39-16a7-4ea9-b44e-22046fdebd41">
