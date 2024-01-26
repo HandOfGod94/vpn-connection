@@ -1,7 +1,7 @@
 {
   "$schema": "https://www.raycast.com/schemas/extension.json",
   "name": "vpn-connection",
-  "title": "VPN Connection",
+  "title": "Connect/Disconnect to Pritunl VPN",
   "description": "",
   "icon": "command-icon.png",
   "author": "HandOfGod94",

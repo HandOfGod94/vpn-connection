@@ -45,7 +45,8 @@ class Connection {
 
 function fetchProfiles(stateCallback: any) {
   let rawConnection = JSON.parse(execSync("pritunl-client list -j", { shell: "/bin/zsh" }).toString());
-  stateCallback(rawConnection.map((connection: any) => new Connection(connection.id, connection.name, connection.status)))
+  let connections = rawConnection.map((connection: any) => new Connection(connection.id, connection.name, connection.status))
+  stateCallback(() => connections)
 }
 
 
@@ -58,7 +59,7 @@ export default function Command() {
     return () => {
       clearInterval(id)
     }
-  })
+  }, [])
 
   return (
     <List>
