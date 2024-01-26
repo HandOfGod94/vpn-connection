@@ -3,7 +3,7 @@
   "name": "vpn-connection",
   "title": "Connect/Disconnect to Pritunl VPN",
   "description": "",
-  "icon": "command-icon.png",
+  "icon": "pritunl.icns",
   "author": "HandOfGod94",
   "license": "MIT",
   "commands": [

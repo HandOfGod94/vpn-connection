@@ -1,4 +1,4 @@
-import { ActionPanel, List, Action, Color } from "@raycast/api";
+import { ActionPanel, List, Action, Color, Icon } from "@raycast/api";
 import { execSync } from "child_process";
 import { useEffect, useState } from "react";
 
@@ -14,7 +14,7 @@ class Connection {
   }
 
   public isConnected(): Boolean {
-    return this.status.includes("secs")
+    return this.status.includes("secs") || this.status.includes("min")
   }
 
   public isConnecting(): Boolean {
@@ -39,6 +39,14 @@ class Connection {
     }
 
     return { value: "Disconnected" }
+  }
+
+  public icon() {
+    if (this.isConnected()) {
+      return Icon.Wifi
+    }
+
+    return Icon.WifiDisabled
   }
 
 }
@@ -66,7 +74,7 @@ export default function Command() {
       {connections.map((connection: any) => (
         <List.Item
           key={connection.id}
-          icon="list-icon.png"
+          icon={connection.icon()}
           title={connection.name}
           accessories={[{ text: connection.stylizedText() }]}
           subtitle={connection.isConnected() ? connection.status : ""}
